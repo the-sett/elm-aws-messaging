@@ -1721,9 +1721,7 @@ messageSystemAttributeListEncoder val =
 -}
 messageSystemAttributeMapDecoder : Decoder MessageSystemAttributeMap
 messageSystemAttributeMapDecoder =
-    Json.Decode.build
-        (Enum.dictDecoder messageSystemAttributeName (Json.Decode.decoder Json.Decode.string))
-        (Enum.dictDecoder messageSystemAttributeName (Json.Decode.decoder Json.Decode.string))
+    Enum.dictDecoder messageSystemAttributeName Json.Decode.string
 
 
 {-| Codec for MessageSystemAttributeName.
